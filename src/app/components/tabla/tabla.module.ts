@@ -9,6 +9,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
 // Angular CDK Imports
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -19,7 +21,10 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatCardModule,
     MatIconModule,
     MatPaginatorModule,
-    ScrollingModule
+    ScrollingModule,
+    MatFormFieldModule,
+    MatInputModule
+
 
   ],
   exports: [TablaComponent]

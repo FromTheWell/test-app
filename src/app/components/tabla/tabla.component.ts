@@ -35,10 +35,11 @@ public resultLength = 0;
   }
 
   /** Aplica el filtro del a búsqueda al datasource */
-  public applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+  public applyFilter(filterValue: any) {
+
+    filterValue.target.value = filterValue.target.value.trim(); // Remove whitespace
+    filterValue.target.value = filterValue.target.value.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue.target.value;
 }
 
 public refreshPagination(event : PageEvent): void {
