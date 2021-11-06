@@ -4,9 +4,9 @@
     <div class="search-input-wrapper mx-12 m-md-0" fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
 
         <label for="search" class="mr-8">
-      <mat-icon class="sg-fg-white secondary-text">search</mat-icon>
+      <mat-icon  class="search-icon"(click)="showSearch = !showSearch">search</mat-icon>
   </label>
-        <mat-form-field floatPlaceholder="never" fxFlex="1 0 auto">
+        <mat-form-field floatPlaceholder="never" fxFlex="1 0 auto" class="search-input" *ngIf="showSearch">
             <input id="search" matInput #filter placeholder="Busqueda" (keyup)="applyFilter($event)">
         </mat-form-field>
     </div>

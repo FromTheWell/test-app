@@ -27,6 +27,8 @@ public pageIndex = 0;
 public pageSize = 10;
 public resultLength = 0;
 
+  public showSearch: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
