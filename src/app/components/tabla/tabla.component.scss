@@ -24,3 +24,14 @@ table {
 .search-icon:hover {
     color: rgba(0, 0, 0, 1);
 }
+
+.ellipsis {
+    overflow: hidden;
+    max-height: 10rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+}

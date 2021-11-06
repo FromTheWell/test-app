@@ -13,7 +13,7 @@ export class TablaComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  public photoList: Photo[] = testSanitas;
+  public data: Photo[] = testSanitas;
 
   public displayedColumns: string[] = ['_id', 'photo', 'text'];
 
@@ -32,7 +32,7 @@ public resultLength = 0;
   constructor() { }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.photoList);
+    this.dataSource = new MatTableDataSource(this.data);
     this.dataSource.paginator = this.paginator;
   }
 
@@ -55,7 +55,7 @@ this.refreshDataSource();
 }
 
 public refreshDataSource(resetPage= false) {
-  this.dataSource = new MatTableDataSource(this.photoList);
+  this.dataSource = new MatTableDataSource(this.data);
   this.dataSource.paginator = this.paginator
 
 
