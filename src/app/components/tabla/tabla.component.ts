@@ -34,6 +34,8 @@ public resultLength = 0;
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.data);
     this.dataSource.paginator = this.paginator;
+    console.log(this.dataSource);
+
   }
 
   /** Aplica el filtro del a búsqueda al datasource */
@@ -42,6 +44,8 @@ public resultLength = 0;
     filterValue.target.value = filterValue.target.value.trim(); // Remove whitespace
     filterValue.target.value = filterValue.target.value.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue.target.value;
+    console.log(this.dataSource);
+
 }
 
 public refreshPagination(event : PageEvent): void {
