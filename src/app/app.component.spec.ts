@@ -1,9 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TablaModule } from './components/tabla/tabla.module';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        TablaModule,
+        BrowserAnimationsModule,
+        NoopAnimationsModule
+      ],
       declarations: [
         AppComponent
       ],
@@ -22,10 +29,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('test-app');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('test-app app is running!');
-  });
 });
