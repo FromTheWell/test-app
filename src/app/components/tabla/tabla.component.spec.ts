@@ -10,6 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TablaComponent } from './tabla.component';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSortModule } from '@angular/material/sort';
 
 describe('TablaComponent', () => {
   let component: TablaComponent;
@@ -27,7 +28,8 @@ describe('TablaComponent', () => {
         MatInputModule,
         MatTooltipModule,
         BrowserAnimationsModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
+        MatSortModule
       ],
       declarations: [ TablaComponent ]
     })

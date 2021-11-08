@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import testSanitas from '../../../assets/testSanitas.json';
 
@@ -12,7 +13,9 @@ export class TablaComponent implements OnInit {
 
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
+  /**Variable global que nos carga los datos mokeados */
   public data: Photo[] = testSanitas;
 
   public displayedColumns: string[] = ['_id', 'photo', 'text'];
@@ -32,8 +35,11 @@ public resultLength = 0;
   constructor() { }
 
   ngOnInit(): void {
+    // La ingesta de datos se debería hacer a través de un servicio asíncrono
+    // pero esto es una prueba y los datos se cargan directamente de un json mokeado asignado a  la variable data
     this.dataSource = new MatTableDataSource(this.data);
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
   }
 
@@ -58,9 +64,14 @@ this.refreshDataSource();
 
 public refreshDataSource(resetPage= false) {
   this.dataSource = new MatTableDataSource(this.data);
-  this.dataSource.paginator = this.paginator
+  this.dataSource.paginator = this.paginator;
+  this.dataSource.sort = this.sort;
 
 
+}
+
+public sortChange(event: Sort){
+  this.refreshDataSource();
 }
 
 }
