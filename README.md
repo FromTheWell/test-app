@@ -1,27 +1,19 @@
 # TestApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
+Prueba de creación de una Tabla utilizando los recursos de Angular Material.
 
-## Development server
+## Ejecución del proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para ejecutar el proyecto `ng serve` en un servidor de desarrollo. Dirigete a `http://localhost:4200/`.
 
-## Code scaffolding
+## Ejecución de pruebas unitarias con Karma
+Para ejecutar las pruebas unitarias `ng test` to execute the unit tests via Karma.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Ejecución de pruebas de Integración con Cypress
+Para ejecutar las pruebas de integración hay que tener previamente ejecutando la aplicación `ng serve` y posteriormente ejecutando el comando
+`npx cypress open` que despliega el framework de cypress.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para mas ayuda el correo de contacto `lucas23delp@gmail.com`
+Dirección del repositorio `https://github.com/FromTheWell?tab=repositories`
