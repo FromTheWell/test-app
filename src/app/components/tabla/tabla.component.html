@@ -7,7 +7,7 @@
       <mat-icon matTooltip="Hacer búsqueda" class="search-icon"(click)="showSearch = !showSearch">search</mat-icon>
   </label>
         <mat-form-field floatPlaceholder="never" fxFlex="1 0 auto" class="search-input" *ngIf="showSearch">
-            <input id="search" matInput #filter placeholder="Búsqueda" (keyup)="applyFilter($event)">
+            <input id="search-input" matInput #filter placeholder="Búsqueda" (keyup)="applyFilter($event)">
         </mat-form-field>
     </div>
     <!-- / SEARCH -->
@@ -38,7 +38,7 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         </table>
-        <p *ngIf="dataSource.filteredData.length === 0" style="text-align: center">No existen elementos para la búsqueda realizada</p>
+        <p *ngIf="dataSource.filteredData.length === 0" class="no-elements">No existen elementos para la búsqueda realizada</p>
     </div>
     <mat-paginator [pageSizeOptions]="[1,2,3,4,5, 10, 25, 100, data.length]" [pageSize]="pageSize" [pageIndex]="pageIndex" [length]="resultLength" (page)="refreshPagination($event)">
     </mat-paginator>
