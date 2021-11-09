@@ -19,7 +19,7 @@
             <!-- id Column -->
             <ng-container matColumnDef="_id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-                <td mat-cell *matCellDef="let element" style="padding-right: 24px;"> {{element._id}} </td>
+                <td mat-cell *matCellDef="let element" class="id-column"> {{element._id}} </td>
             </ng-container>
             <!-- photo url Column -->
             <ng-container matColumnDef="photo">
@@ -31,7 +31,7 @@
             <!-- Text Column -->
             <ng-container matColumnDef="text">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Text </th>
-                <td mat-cell *matCellDef="let element" [matTooltip]="element.text" class="ellipsis" style="padding: 24px 24px 0px 24px; text-align: justify;"> {{element.text}} </td>
+                <td mat-cell *matCellDef="let element" [matTooltip]="element.text" class="ellipsis" class="text-column"> {{element.text}} </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
