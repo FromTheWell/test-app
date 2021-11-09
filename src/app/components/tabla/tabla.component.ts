@@ -23,12 +23,12 @@ export class TablaComponent implements OnInit {
   /** Contiene los registros que se muestran en la tabla*/
   public dataSource: MatTableDataSource<any> = new MatTableDataSource();
 
-      /** Variables del paginado */
-@Input()
-public pageIndex = 0;
-@Input()
-public pageSize = 10;
-public resultLength = 0;
+  /** Variables del paginado */
+
+  public pageIndex = 0;
+
+  public pageSize = 4000;
+  public resultLength = 0;
 
   public showSearch: boolean;
 
