@@ -4,8 +4,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "test Unit": "ng test",
-        "test Cypress": "npx cypress open"
+        "test:unit": "ng test",
+        "test:cypress": "npx cypress open"
     },
     "private": true,
     "dependencies": {
