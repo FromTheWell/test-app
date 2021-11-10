@@ -13,6 +13,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
+import { PhotoSanitasService } from '../../services/photo-sanitas.service';
 
 @NgModule({
   declarations: [TablaComponent],
@@ -27,7 +29,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatInputModule,
     MatTooltipModule,
     MatSortModule,
+    HttpClientModule,
   ],
   exports: [TablaComponent],
+  providers: [PhotoSanitasService],
 })
 export class TablaModule {}

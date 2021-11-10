@@ -3,6 +3,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import testSanitas from '../../../assets/testSanitas.json';
+import { PhotoSanitasService } from '../../services/photo-sanitas.service';
 
 @Component({
   selector: 'app-tabla',
@@ -25,19 +26,15 @@ export class TablaComponent implements OnInit {
 
   public pageIndex = 0;
 
-  public pageSize = 4000;
+  public pageSize = 10;
   public resultLength = 0;
 
   public showSearch: boolean;
 
-  constructor() {}
+  constructor(public photoSanitasService: PhotoSanitasService) {}
 
   ngOnInit(): void {
-    // La ingesta de datos se debería hacer a través de un servicio asíncrono
-    // pero esto es una prueba y los datos se cargan directamente de un json mokeado asignado a  la variable data
-    this.dataSource = new MatTableDataSource(this.data);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.refreshDataSource();
   }
 
   /** Aplica el filtro del a búsqueda al datasource */
@@ -59,9 +56,11 @@ export class TablaComponent implements OnInit {
   }
 
   public refreshDataSource() {
-    this.dataSource = new MatTableDataSource(this.data);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.photoSanitasService.getJSON().subscribe((s) => {
+      this.dataSource = new MatTableDataSource(s);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   public sortChange() {
@@ -70,7 +69,7 @@ export class TablaComponent implements OnInit {
 }
 
 export interface Photo {
-  _id: string;
+  _id: number;
   photo: string;
   text: string;
 }
