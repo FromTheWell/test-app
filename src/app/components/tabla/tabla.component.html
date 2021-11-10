@@ -40,7 +40,7 @@
         </table>
         <p *ngIf="dataSource.filteredData.length === 0" class="no-elements">No existen elementos para la búsqueda realizada</p>
     </div>
-    <mat-paginator [pageSizeOptions]="[1,2,3,4,5, 10, 100, 4000, data.length]" [pageSize]="pageSize" [pageIndex]="pageIndex" [length]="resultLength" (page)="refreshPagination($event)">
+    <mat-paginator [pageSizeOptions]="[1,2,3,4,5, 10, 100, data.length]" [pageSize]="pageSize" [pageIndex]="pageIndex" [length]="resultLength" (page)="refreshPagination($event)">
     </mat-paginator>
     <!-- /Tabla -->
 </mat-card>

@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { MatSort, Sort } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import testSanitas from '../../../assets/testSanitas.json';
 import { PhotoSanitasService } from '../../services/photo-sanitas.service';
+import { Photo } from '../../models/photo.model';
 
 @Component({
   selector: 'app-tabla',
@@ -15,12 +15,11 @@ export class TablaComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   /**Variable global que nos carga los datos mokeados */
-  public data: Photo[] = testSanitas;
-
+  public data: Photo[] = [];
   public displayedColumns: string[] = ['_id', 'photo', 'text'];
 
   /** Contiene los registros que se muestran en la tabla*/
-  public dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  public dataSource: MatTableDataSource<Photo> = new MatTableDataSource();
 
   /** Variables del paginado */
 
@@ -57,6 +56,7 @@ export class TablaComponent implements OnInit {
 
   public refreshDataSource() {
     this.photoSanitasService.getJSON().subscribe((s) => {
+      this.data = s;
       this.dataSource = new MatTableDataSource(s);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -66,10 +66,4 @@ export class TablaComponent implements OnInit {
   public sortChange() {
     this.refreshDataSource();
   }
-}
-
-export interface Photo {
-  _id: number;
-  photo: string;
-  text: string;
 }
