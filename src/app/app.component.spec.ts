@@ -1,19 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { TablaModule } from './components/tabla/tabla.module';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+} from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        TablaModule,
-        BrowserAnimationsModule,
-        NoopAnimationsModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [TablaModule, BrowserAnimationsModule, NoopAnimationsModule],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -28,5 +25,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('test-app');
   });
-
 });

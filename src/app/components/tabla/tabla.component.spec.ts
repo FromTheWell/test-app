@@ -1,5 +1,10 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { ComponentFixture, fakeAsync, flush, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  flush,
+  TestBed,
+} from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,7 +14,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TablaComponent } from './tabla.component';
-import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  NoopAnimationsModule,
+  BrowserAnimationsModule,
+} from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort';
 
 describe('TablaComponent', () => {
@@ -29,11 +37,10 @@ describe('TablaComponent', () => {
         MatTooltipModule,
         BrowserAnimationsModule,
         NoopAnimationsModule,
-        MatSortModule
+        MatSortModule,
       ],
-      declarations: [ TablaComponent ]
-    })
-    .compileComponents();
+      declarations: [TablaComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -53,6 +60,4 @@ describe('TablaComponent', () => {
     console.log(component.dataSource.data);
     expect(component.dataSource.data.length !== 0).toBeTruthy();
   }));
-
-
 });
