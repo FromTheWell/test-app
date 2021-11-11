@@ -1,7 +1,18 @@
 .content {
-    padding: 16px;
+    // padding: 16px;
 }
 
 .content>mat-card {
     width: 200px;
+}
+
+.ellipsis {
+    overflow: hidden;
+    max-height: 10rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
 }
