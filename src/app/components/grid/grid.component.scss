@@ -16,3 +16,16 @@
     text-overflow: ellipsis;
     -webkit-line-clamp: 4;
 }
+
+.search-input {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.search-icon {
+    color: rgba(0, 0, 0, .54);
+}
+
+.search-icon:hover {
+    color: rgba(0, 0, 0, 1);
+}

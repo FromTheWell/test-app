@@ -8,14 +8,27 @@ import { Photo } from '../models/photo.model';
 export class PhotoSanitasService {
   constructor(private http: HttpClient, private lorenImpsum: LoremIpsum) {}
 
+  private lorem = new LoremIpsum({
+    sentencesPerParagraph: {
+      max: 8,
+      min: 4,
+    },
+    wordsPerSentence: {
+      max: 16,
+      min: 4,
+    },
+  });
+
   private uri =
     'data:application/json;charset=UTF-8,' +
     encodeURIComponent(JSON.stringify(this.generateJson()));
 
+  /*Servicio que devuelve un JSON de tipo Photo[]*/
   public getJSON(): Observable<any> {
     return this.http.get(this.uri);
   }
 
+  /*Función de generación de un Json Aleatorio de tipo Photo[]*/
   private generateJson(): Photo[] {
     const photos: Photo[] = [];
 
@@ -24,12 +37,11 @@ export class PhotoSanitasService {
       const photo: Photo = new Photo(
         id,
         `https://picsum.photos/id/${id}/500/500.jpg`,
-        'Texto de prueba'
+        this.lorem.generateWords(5)
       );
 
       photos.push(photo);
     }
-    console.log(photos);
 
     return photos;
   }

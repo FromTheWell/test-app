@@ -22,6 +22,7 @@ export class GridComponent implements OnInit {
     this.refreshDataSource();
   }
 
+  /** Función que carga los datos de las fotos */
   public refreshDataSource() {
     const photoSubscription = this.photoSanitasService
       .getJSON()
@@ -32,12 +33,15 @@ export class GridComponent implements OnInit {
     this.subscriptions.push(photoSubscription);
   }
 
+  /** Función de filtrado de fotos */
   public applyFilter(filter: any) {
     let filterValue = filter.target.value;
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.data = this.dataCopy.filter((x) =>
-      x.text.toLocaleLowerCase().includes(filterValue)
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.data = this.dataCopy.filter(
+      (x) =>
+        x.text.toLocaleLowerCase().includes(filterValue) ||
+        x._id.toString().includes(filterValue)
     );
   }
 
