@@ -16,6 +16,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { PhotoSanitasService } from '../../services/photo-sanitas.service';
+import { LoremIpsum } from 'lorem-ipsum';
 
 @NgModule({
   declarations: [GridComponent],
@@ -32,6 +33,6 @@ import { PhotoSanitasService } from '../../services/photo-sanitas.service';
     FlexLayoutModule,
   ],
   exports: [GridComponent],
-  providers: [PhotoSanitasService],
+  providers: [PhotoSanitasService, LoremIpsum],
 })
 export class GridModule {}
