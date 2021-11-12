@@ -1,5 +1,10 @@
 .content {
     padding: 16px;
+    height: 100%;
+}
+
+app-grid {
+    height: 100%;
 }
 
 .content>mat-card {
@@ -28,4 +33,10 @@
 
 .search-icon:hover {
     color: rgba(0, 0, 0, 1);
+}
+
+.grid-content {
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
 }
