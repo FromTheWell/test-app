@@ -10,14 +10,17 @@
         </mat-form-field>
     </div>
     <!-- / SEARCH -->
-    <div fxLayout="row wrap" fxLayoutGap="16px grid" class="grid-content">
-        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let element of data; trackBy: trackById">
-            <mat-card class="mat-elevation-z4">
+    <div class="grid-content">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let element of data; trackBy: trackById">
+                <mat-card class="mat-elevation-z4">
 
-                <img mat-card-image [src]="element.photo" [alt]="element._id" loading="lazy">
-                <div mat-card-content class="ellipsis" [matTooltip]="element.text"> {{element.text}}</div>
+                    <img mat-card-image [src]="element.photo" [alt]="element._id" loading="lazy">
+                    <div mat-card-content class="ellipsis" [matTooltip]="element.text"> {{element.text}}</div>
 
-            </mat-card>
+                </mat-card>
+            </div>
         </div>
     </div>
+
 </div>
