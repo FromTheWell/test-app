@@ -1,7 +1,7 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,9 +13,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { GridComponent } from './grid.component';
 import { PhotoSanitasService } from '../../services/photo-sanitas.service';
 import { LoremIpsum } from 'lorem-ipsum';
-import { flush, fakeAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
 import { Photo } from '../../models/photo.model';
 
 describe('GridComponent', () => {
@@ -78,19 +76,11 @@ describe('GridComponent', () => {
     expect(result).toBe(1);
   });
 
-  // it('TEST 2.0: Should get the data', async(() => {
-  //   component.ngOnInit();
-  //   fixture.detectChanges();
-  //   console.log(component.data);
-  //   expect(component.data.length !== 0).toBeTruthy();
-  // }));
-
-  // it('TEST 2.1: Grid with data', () => {
-  //   component.ngOnInit();
-  //   fixture.detectChanges();
-  //   const image: HTMLElement =
-  //     fixture.nativeElement.querySelector('.mat-card-image');
-
-  //   expect(image).toBeTruthy();
-  // });
+  it('TEST 4.1: Check trackById have been called', () => {
+    const spyOnTrackById = spyOn(component, 'trackById');
+    const photo: Photo = new Photo(1, 'testUrl', 'test text');
+    component.trackById(1, photo);
+    fixture.detectChanges();
+    expect(spyOnTrackById).toHaveBeenCalled();
+  });
 });

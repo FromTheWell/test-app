@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { TablaModule } from './components/tabla/tabla.module';
 import { GridModule } from './components/grid/grid.module';
 import {
   BrowserAnimationsModule,
