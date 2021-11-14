@@ -17,6 +17,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { PhotoSanitasService } from '../../services/photo-sanitas.service';
 import { LoremIpsum } from 'lorem-ipsum';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [GridComponent],
@@ -31,6 +32,7 @@ import { LoremIpsum } from 'lorem-ipsum';
     HttpClientModule,
     MatGridListModule,
     FlexLayoutModule,
+    FormsModule,
   ],
   exports: [GridComponent],
   providers: [PhotoSanitasService, LoremIpsum],

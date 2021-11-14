@@ -14,6 +14,8 @@ export class GridComponent implements OnInit {
   public data: Photo[] = [];
   public dataCopy: Photo[] = [];
 
+  public inputSearch = '';
+
   public showSearch: boolean;
 
   private subscriptions: Subscription[] = [];
@@ -35,6 +37,13 @@ export class GridComponent implements OnInit {
 
   /** Función de filtrado de fotos */
   public applyFilter(filter: any) {
+    if (
+      filter === undefined ||
+      filter.target === undefined ||
+      filter.target.value === undefined
+    ) {
+      return;
+    }
     let filterValue = filter.target.value;
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
@@ -46,6 +55,9 @@ export class GridComponent implements OnInit {
   }
 
   public trackById(index: number, item: Photo) {
+    if (index === undefined || item === undefined) {
+      return;
+    }
     return item._id;
   }
 

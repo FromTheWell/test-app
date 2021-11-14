@@ -5,8 +5,10 @@
         "lint:show": "eslint \"**/*.{ts,js}\"",
         "lint:fix": "eslint \"**/*.{ts,js}\" --fix",
         "start": "ng serve",
+        "cy:open": "npx cypress open",
         "test:unit": "ng test",
-        "test:cypress": "npx cypress open"
+        "test:coverage": "ng test --watch=false --code-coverage",
+        "test:cypress": "concurrently \"npm run start\" \"wait-on http-get://localhost:4200 && npm run cy:open\" --kill-others --success first"
     },
     "private": true,
     "dependencies": {
@@ -36,6 +38,7 @@
         "@typescript-eslint/eslint-plugin": "^5.3.1",
         "@typescript-eslint/eslint-plugin-tslint": "^5.3.1",
         "@typescript-eslint/parser": "^5.3.1",
+        "concurrently": "^6.3.0",
         "cypress": "^8.7.0",
         "eslint": "^8.2.0",
         "eslint-config-prettier": "^8.3.0",
@@ -52,6 +55,7 @@
         "karma-jasmine-html-reporter": "~1.7.0",
         "prettier": "^2.4.1",
         "prettier-eslint": "^13.0.0",
-        "typescript": "~4.4.3"
+        "typescript": "~4.4.3",
+        "wait-on": "^6.0.0"
     }
 }

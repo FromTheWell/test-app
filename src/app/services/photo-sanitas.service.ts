@@ -19,17 +19,17 @@ export class PhotoSanitasService {
     },
   });
 
-  private uri =
+  public API_URL =
     'data:application/json;charset=UTF-8,' +
     encodeURIComponent(JSON.stringify(this.generateJson()));
 
   /*Servicio que devuelve un JSON de tipo Photo[]*/
   public getJSON(): Observable<any> {
-    return this.http.get(this.uri);
+    return this.http.get(this.API_URL);
   }
 
   /*Función de generación de un Json Aleatorio de tipo Photo[]*/
-  private generateJson(): Photo[] {
+  public generateJson(): Photo[] {
     const photos: Photo[] = [];
 
     for (let index = 0; index < 4000; index++) {
