@@ -18,6 +18,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PhotoSanitasService } from '../../services/photo-sanitas.service';
 import { LoremIpsum } from 'lorem-ipsum';
 import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [GridComponent],
@@ -33,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     MatGridListModule,
     FlexLayoutModule,
     FormsModule,
+    InfiniteScrollModule,
   ],
   exports: [GridComponent],
   providers: [PhotoSanitasService, LoremIpsum],
