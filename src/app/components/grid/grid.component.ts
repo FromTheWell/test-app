@@ -17,13 +17,12 @@ export class GridComponent implements OnInit {
   public dataCopy: Photo[] = [];
 
   public inputSearch = '';
-
   public showSearch: boolean;
 
   private finishPage = 100;
   private actualPage: number;
 
-  private subscriptions: Subscription[] = [];
+  public subscriptions: Subscription[] = [];
 
   ngOnInit() {
     this.refreshDataSource();
@@ -74,18 +73,20 @@ export class GridComponent implements OnInit {
   }
 
   public add40lines() {
-    const actualLength = this.data.length;
-    this.data = this.data.concat(
-      this.dataCopy.slice(actualLength, actualLength + 40)
-    );
-    console.log(this.data);
+    if (this.data === undefined) {
+      return;
+    } else {
+      const actualLength = this.data.length;
+      this.data = this.data.concat(
+        this.dataCopy.slice(actualLength, actualLength + 40)
+      );
+    }
   }
 
   public onScroll() {
     if (this.actualPage < this.finishPage) {
       this.add40lines();
       this.actualPage++;
-      console.log(this.actualPage);
     } else {
       console.log('No more lines. Finish page!');
       return;
