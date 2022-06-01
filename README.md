@@ -5,6 +5,7 @@ Prueba de creación de un Grid de Imagenes utilizando los recursos de Angular Ma
 ## Ejecución del proyecto
 
 Para ejecutar el proyecto `npm run start` en un servidor de desarrollo. Dirigete a `http://localhost:4200/`.
+Para probar la aplicación sin instalar el proyecto probar con `https://stackblitz.com/github/FromTheWell/test-app`
 
 ## Ejecución de pruebas unitarias con Karma
 
