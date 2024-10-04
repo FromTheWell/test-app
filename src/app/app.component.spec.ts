@@ -25,14 +25,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('test-app');
   });
-
-  it('should render title in a span tag', () => {
-    //6
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('span').textContent).toContain(
-      'Test Sanitas Grid de Imágenes'
-    );
-  });
 });

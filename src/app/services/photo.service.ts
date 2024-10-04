@@ -5,7 +5,7 @@ import { LoremIpsum } from 'lorem-ipsum';
 import { Photo } from '../models/photo.model';
 
 @Injectable()
-export class PhotoSanitasService {
+export class PhotoService {
   constructor(private http: HttpClient, private lorenImpsum: LoremIpsum) {}
 
   private lorem = new LoremIpsum({

@@ -11,7 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { GridComponent } from './grid.component';
-import { PhotoSanitasService } from '../../services/photo-sanitas.service';
+import { PhotoService } from '../../services/photo.service';
 import { LoremIpsum } from 'lorem-ipsum';
 import { FormsModule } from '@angular/forms';
 import { Photo } from '../../models/photo.model';
@@ -46,7 +46,7 @@ describe('GridComponent', () => {
         NoopAnimationsModule,
       ],
       declarations: [GridComponent],
-      providers: [PhotoSanitasService, LoremIpsum],
+      providers: [PhotoService, LoremIpsum],
     }).compileComponents();
   });
 

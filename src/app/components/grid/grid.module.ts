@@ -15,7 +15,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 // Angular CDK Imports
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-import { PhotoSanitasService } from '../../services/photo-sanitas.service';
+import { PhotoService } from '../../services/photo.service';
 import { LoremIpsum } from 'lorem-ipsum';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -37,6 +37,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     InfiniteScrollModule,
   ],
   exports: [GridComponent],
-  providers: [PhotoSanitasService, LoremIpsum],
+  providers: [PhotoService, LoremIpsum],
 })
 export class GridModule {}

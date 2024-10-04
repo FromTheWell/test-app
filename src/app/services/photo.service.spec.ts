@@ -1,17 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PhotoSanitasService } from './photo-sanitas.service';
+import { PhotoService } from './photo.service';
 import { LoremIpsum } from 'lorem-ipsum';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 
-describe('PhotoSanitasService', () => {
-  let service: PhotoSanitasService;
+describe('PhotoService', () => {
+  let service: PhotoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PhotoSanitasService, LoremIpsum, HttpClient, HttpHandler],
+      providers: [PhotoService, LoremIpsum, HttpClient, HttpHandler],
     });
-    service = TestBed.inject(PhotoSanitasService);
+    service = TestBed.inject(PhotoService);
   });
 
   it('should be created', () => {

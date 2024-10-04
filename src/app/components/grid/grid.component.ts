@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Photo } from '../../models/photo.model';
-import { PhotoSanitasService } from '../../services/photo-sanitas.service';
+import { PhotoService } from '../../services/photo.service';
 
 @Component({
   selector: 'app-grid',
@@ -9,7 +9,7 @@ import { PhotoSanitasService } from '../../services/photo-sanitas.service';
   styleUrls: ['./grid.component.scss'],
 })
 export class GridComponent implements OnInit {
-  constructor(public photoSanitasService: PhotoSanitasService) {
+  constructor(public photoService: PhotoService) {
     this.actualPage = 1;
   }
 
@@ -30,7 +30,7 @@ export class GridComponent implements OnInit {
 
   /** Función que carga los datos de las fotos */
   public refreshDataSource() {
-    const photoSubscription = this.photoSanitasService
+    const photoSubscription = this.photoService
       .getJSON()
       .subscribe((s: Photo[]) => {
         this.data = s.slice(0, 40);
