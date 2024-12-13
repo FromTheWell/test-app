@@ -13,6 +13,8 @@ export class GridComponent implements OnInit {
     this.actualPage = 1;
   }
 
+  public defaultImage = '../../../assets/not-found.jpg';
+
   public data: Photo[] = [];
   public dataCopy: Photo[] = [];
 

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GridComponent } from './grid.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Material Imports
 import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
@@ -32,7 +31,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatTooltipModule,
     HttpClientModule,
     MatGridListModule,
-    FlexLayoutModule,
     FormsModule,
     InfiniteScrollModule,
   ],

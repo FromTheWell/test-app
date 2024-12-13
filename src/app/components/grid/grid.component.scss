@@ -37,3 +37,20 @@
     height: 100%;
     padding: 1em;
 }
+
+.card-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card{
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card-list:hover> :not(:hover){
+  filter: blur(5px);
+  opacity: 0.5;
+}
