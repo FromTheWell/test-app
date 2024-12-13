@@ -1,6 +1,6 @@
 # TestApp - Grid
 
-Prueba de creación de un Grid de Imagenes utilizando los recursos de Angular Material y FxLayout.
+Prueba de creación de un Grid de Imagenes utilizando los recursos de Angular Material y CSS.
 
 ## Ejecución del proyecto
 
