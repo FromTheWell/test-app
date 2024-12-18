@@ -4,11 +4,11 @@ import { GridComponent } from './grid.component';
 import { HttpClientModule } from '@angular/common/http';
 
 // Material Imports
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
+import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyTooltipModule as MatTooltipModule } from '@angular/material/legacy-tooltip';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 // Angular CDK Imports

@@ -9,10 +9,10 @@
   </div> <!-- / SEARCH -->
   <div class="grid-content" infiniteScroll [infiniteScrollDistance]="0.8" [scrollWindow]="false" (scrolled)="onScroll()">
   <div class="grid card-list">
-  <div class="grid-item" *ngFor="let element of data; trackBy: trackById" style="flex: 1 1 25%; flex-basis: 100%; flex-basis: 33%;">
-    <mat-card class="mat-elevation-z4 card">
-      <img mat-card-image [src]="element.photo? element.photo : defaultImage" [alt]="element._id" loading="lazy">
-      <div mat-card-content class="ellipsis" [matTooltip]="element.text">{{element.text}}</div>
+  <div class="grid-item" *ngFor="let element of data; trackBy: trackById" >
+    <mat-card class="mat-elevation-z4">
+      <img mat-card-image [src]="element.photo? element.photo : defaultImage" [alt]="element._id" loading="lazy" (error)="onImageError($event)">
+      <mat-card-content class="ellipsis" [matTooltip]="element.text">{{element.text}}</mat-card-content>
     </mat-card>
   </div>
 </div>

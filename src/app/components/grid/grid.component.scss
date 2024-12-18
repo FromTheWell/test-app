@@ -5,7 +5,7 @@
 }
 
 .content>mat-card {
-    width: 200px;
+  width: 100%;
 }
 
 .ellipsis {
@@ -38,10 +38,17 @@
     padding: 1em;
 }
 
+.grid-item{
+  max-width: 100%;
+  flex: 1 1 100%;
+  aspect-ratio: 1/1;
+}
+
 .card-list{
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .card{
