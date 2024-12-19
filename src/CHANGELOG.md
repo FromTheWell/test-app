@@ -1,6 +1,6 @@
 # Notas de Versión
 
-## Versión 1.X.X
+## Versión 1.1.0
 - Se ha actualizado a la versión 16 de Angular
 
 ## Versión 1.0.0
