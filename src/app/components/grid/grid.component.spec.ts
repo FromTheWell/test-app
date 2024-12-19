@@ -2,25 +2,28 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
+
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyTooltipModule as MatTooltipModule } from '@angular/material/legacy-tooltip';
+
 
 import { GridComponent } from './grid.component';
 import { PhotoService } from '../../services/photo.service';
 import { LoremIpsum } from 'lorem-ipsum';
 import { FormsModule } from '@angular/forms';
 import { Photo } from '../../models/photo.model';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 import { By } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import {
   BrowserAnimationsModule,
   NoopAnimationsModule,
 } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 describe('GridComponent', () => {
   let component: GridComponent;
@@ -37,7 +40,6 @@ describe('GridComponent', () => {
         MatInputModule,
         MatTooltipModule,
         MatGridListModule,
-        FlexLayoutModule,
         FormsModule,
         InfiniteScrollModule,
         BrowserAnimationsModule,
