@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GridComponent } from './grid.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 // Material Imports
 import {MatCardModule} from '@angular/material/card';
@@ -19,22 +19,15 @@ import { LoremIpsum } from 'lorem-ipsum';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
-@NgModule({
-  declarations: [GridComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatIconModule,
-    ScrollingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTooltipModule,
-    HttpClientModule,
-    MatGridListModule,
-    FormsModule,
-    InfiniteScrollModule,
-  ],
-  exports: [GridComponent],
-  providers: [PhotoService, LoremIpsum],
-})
+@NgModule({ declarations: [GridComponent],
+    exports: [GridComponent], imports: [CommonModule,
+        MatCardModule,
+        MatIconModule,
+        ScrollingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTooltipModule,
+        MatGridListModule,
+        FormsModule,
+        InfiniteScrollModule], providers: [PhotoService, LoremIpsum, provideHttpClient(withInterceptorsFromDi())] })
 export class GridModule {}

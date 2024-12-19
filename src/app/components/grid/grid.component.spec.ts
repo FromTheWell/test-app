@@ -1,6 +1,6 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
@@ -28,25 +28,22 @@ describe('GridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        CommonModule,
+    declarations: [GridComponent],
+    imports: [CommonModule,
         MatCardModule,
         MatIconModule,
         ScrollingModule,
         MatFormFieldModule,
         MatInputModule,
         MatTooltipModule,
-        HttpClientModule,
         MatGridListModule,
         FlexLayoutModule,
         FormsModule,
         InfiniteScrollModule,
         BrowserAnimationsModule,
-        NoopAnimationsModule,
-      ],
-      declarations: [GridComponent],
-      providers: [PhotoService, LoremIpsum],
-    }).compileComponents();
+        NoopAnimationsModule],
+    providers: [PhotoService, LoremIpsum, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
   });
 
   beforeEach(() => {
