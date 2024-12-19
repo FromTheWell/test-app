@@ -4,9 +4,10 @@ import { Photo } from '../../models/photo.model';
 import { PhotoService } from '../../services/photo.service';
 
 @Component({
-  selector: 'app-grid',
-  templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss'],
+    selector: 'app-grid',
+    templateUrl: './grid.component.html',
+    styleUrls: ['./grid.component.scss'],
+    standalone: false
 })
 export class GridComponent implements OnInit {
   constructor(public photoService: PhotoService) {
