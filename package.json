@@ -25,7 +25,7 @@
     "@angular/router": "^19.0.5",
     "common-tags": "^1.8.2",
     "lorem-ipsum": "^2.0.4",
-    "ngx-infinite-scroll": "^18.0.0",
+    "ngx-infinite-scroll": "^19.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
