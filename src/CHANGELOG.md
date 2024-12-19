@@ -1,5 +1,8 @@
 # Notas de Versión
 
+## Versión 1.2.0
+- Se ha actualizado a la versión 17 de Angular
+
 ## Versión 1.1.0
 - Se ha actualizado a la versión 16 de Angular
 
